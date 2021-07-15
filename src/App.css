@@ -18,6 +18,19 @@ body{
   background-color: salmon;
 }
 
+.styler
+{
+  position: absolute;
+  background-color: whitesmoke;
+  width: 400;
+  border: 2px solid #000;
+  padding: spacing(2, 4, 3);
+}
+.btn
+{
+  width:90px
+}
+
 .app_infos
 {
   display: flex;

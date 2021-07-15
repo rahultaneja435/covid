@@ -4,14 +4,15 @@ import Infostats from './InfoStats'
 import { useEffect, useState } from 'react';
 import Table from './Table'
 import { preetyFormat, sortedData } from './util';
+import Modal from "@material-ui/core/Modal";
 import CovidMaps from './CovidMaps';
+import { makeStyles } from "@material-ui/core/styles";
 import "leaflet/dist/leaflet.css";
-// import Struct from './Struct';
+import Struct from './Struct'
+import { useAuth0 } from '@auth0/auth0-react';
 
-//"https://disease.sh/v3/covid-19/all"
-// https://disease.sh/v3/covid-19/countries
-// "https://disease.sh/v3/covid-19/{countries}"
 function App() {
+  const {user,isAuthenticated} = useAuth0();
   const [countries,setCountries] = useState([]);
   const [singleCountry,setCountry] = useState('Worldwide');
   const [countryInfo,setcountyInfo] = useState([]);
@@ -20,6 +21,36 @@ function App() {
   const [infoStatesData,setInfoStatesData] = useState("cases");
   const [mapCenter,setMapCenter]= useState({lat:34,lng:-40})
   const [mapZoom,setMapZoom]= useState(3);
+  const [open, setOpen] = useState(false);
+  const [modalStyle] = useState(getModalStyle);
+
+  const body = (
+    <div style={modalStyle} className="styler">
+      <h2 id="simple-modal-title">Covid Line Graph</h2>
+     <Struct casesType={infoStatesData}/>
+    </div>
+  );
+
+  function rand() {
+    return Math.round(Math.random() * 20) - 10;
+  }
+  function getModalStyle() {
+    const top = 50 + rand();
+    const left = 50 + rand();
+  
+    return {
+      top: `${top}%`,
+      left: `${left}%`,
+      transform: `translate(-${top}%, -${left}%)`
+    };
+  }
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   
   useEffect(()=>
   {
@@ -63,17 +94,27 @@ function App() {
         setCountry(countryCode)
         setcountyInfo(data);
         console.log("data",countryInfo);
-        setMapCenter([data.countryInfo.lat,data.countryInfo.long]);
+        setMapCenter([data.countryInfo.lat ? data.countryInfo.lat: 34 ,data.countryInfo.long]);
         console.log("mapp",mapCountries);
         setMapZoom(4);
       })
 
   }
   return (
+    isAuthenticated && (
     <div className="App">
       <div className="container_left">
       <div className="app_header">
       <h1>Covid-19 Tracker</h1>
+      <Modal
+  open={open}
+  onClose={handleClose}
+  aria-labelledby="simple-modal-title"
+  aria-describedby="simple-modal-description"
+>
+  {body}
+</Modal>
+      <button class="btn"onClick={handleOpen}>Click here to see Graph</button>
       <FormControl className="app_selectOptions">
        <Select variant = "outlined" onChange = {onCountryChange} value={singleCountry}>
       <MenuItem value="Worldwide">Worldwide</MenuItem>
@@ -114,7 +155,7 @@ function App() {
       {/* graph*/}
       {/* map*/}
     </div>
-  );
+  ));
 }
 
 export default App;

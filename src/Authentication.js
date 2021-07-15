@@ -88,6 +88,8 @@ function Authentication() {
          handleInputs();
      },[]);
    return (
+    <div>
+    {!user ? (<App/>):(    
     <section className="login">
     <div className="loginContainer">
     <img src={logo}></img>
@@ -109,7 +111,11 @@ function Authentication() {
             </>)}
         </div>       
     </div>
-</section>)
+</section>)}
+
+</div>
+
+)
 }
 
 
