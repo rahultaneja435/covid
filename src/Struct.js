@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Line} from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import numeral from "numeral";
 
 const options = {
@@ -16,7 +16,7 @@ const options = {
     mode: "index",
     intersect: false,
     callbacks: {
-      label: function (tooltipItem, data) {
+      label: function(tooltipItem, data) {
         return numeral(tooltipItem.value).format("+0,0");
       },
     },
@@ -37,7 +37,7 @@ const options = {
           display: false,
         },
         ticks: {
-          callback: function (value, index, values) {
+          callback: function(value, index, values) {
             return numeral(value).format("0a");
           },
         },
@@ -83,7 +83,7 @@ function Struct({ casesType }) {
   }, [casesType]);
 
   return (
-    <div style={{height:"500px",width:"900px"}}>
+    <div style={{ height: "500px", width: "900px" }}>
       {data?.length > 0 && (
         <Line
           data={{

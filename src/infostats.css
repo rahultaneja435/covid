@@ -1,27 +1,23 @@
-.Infostats
-{
-    flex: 1;
+.Infostats {
+  flex: 1;
 }
 
-.Infostats:not(:last-child)
-{
-    margin-right: 10px;
+.Infostats:not(:last-child) {
+  margin-right: 10px;
 }
-.info_cases{
-    color: red;
-    font-weight: 600;
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+.info_cases {
+  color: red;
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
 }
 
-.info_cases--green
-{
-    color: greenyellow
+.info_cases--green {
+  color: greenyellow;
 }
-.info_totalcases
-{
-    color: gray;
-    font-weight: 700 !important;
-    font-size: 0.8rem !important;
-    margin-bottom: 15px !important; 
+.info_totalcases {
+  color: gray;
+  font-weight: 700 !important;
+  font-size: 0.8rem !important;
+  margin-bottom: 15px !important;
 }
