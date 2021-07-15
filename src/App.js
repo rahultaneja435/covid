@@ -105,7 +105,6 @@ function App() {
       });
   };
   return (
-    isAuthenticated && (
       <div className="App">
         <div className="container_left">
           <div className="app_header">
@@ -187,8 +186,7 @@ function App() {
         {/* graph*/}
         {/* map*/}
       </div>
-    )
-  );
+    );
 }
 
 export default App;
