@@ -2,52 +2,56 @@
   margin: 0%;
 }
 
-body{
-  background-color:aliceblue;
+body {
+  background-color: aliceblue;
 }
 .app_header {
- display: flex;
- justify-content: space-between;
- align-items: center;
- margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.app_selectOptions
-{
+.app_selectOptions {
   font-style: italic;
   background-color: salmon;
 }
 
-.app_infos
-{
+.styler {
+  position: absolute;
+  background-color: whitesmoke;
+  width: 400;
+  border: 2px solid #000;
+  padding: spacing(2, 4, 3);
+}
+.btn {
+  width: 90px;
+}
+
+.app_infos {
   display: flex;
   justify-content: space-between;
 }
 
-.App{
+.App {
   display: flex;
   justify-content: space-evenly;
-  padding: 20px;;
+  padding: 20px;
 }
 
-.container_left
-{
+.container_left {
   flex: 0.9;
 }
-.app_header >  h1{
- color: red;
- font-size: 2rem;
+.app_header > h1 {
+  color: red;
+  font-size: 2rem;
 }
-.Select
-{
+.Select {
   font-style: italic;
 }
 
-@media (max-width: 990px)
-{
-  .App
-  {
+@media (max-width: 990px) {
+  .App {
     flex-direction: column;
   }
 }
-

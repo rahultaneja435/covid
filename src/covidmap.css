@@ -1,41 +1,36 @@
-.covidMapper
-{
-    height: 500px;
-    background-color: white;
-    padding: 1rem;
-    border-radius: 20px;
-    margin-top: 16px;
-    box-shadow: 0 0 8px -4px rgba(0,0,0,0.5);
+.covidMapper {
+  height: 500px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 20px;
+  margin-top: 16px;
+  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
 }
 
-.covidMapper .leaflet-container
-{
-    height: 100%;
+.covidMapper .leaflet-container {
+  height: 100%;
 }
 
-.flag img
-{
-    width:100px;
-    border-radius:5px;
+.flag img {
+  width: 100px;
+  border-radius: 5px;
 }
 
-.flag{
-    height:80px;
-    width: 100%;
-    background-size: cover;
-    border-radius: 8px;
+.flag {
+  height: 80px;
+  width: 100%;
+  background-size: cover;
+  border-radius: 8px;
 }
-.popDatatotal
-{
-    font-size: 16px;
-    margin-top: 5px;
+.popDatatotal {
+  font-size: 16px;
+  margin-top: 5px;
 }
-.popDatarecovered
-{
-    font-size: 16px;
-    margin-top: 5px;
+.popDatarecovered {
+  font-size: 16px;
+  margin-top: 5px;
 }
-.popDatadeaths{
-    font-size: 16px;
-    margin-top: 5px;
+.popDatadeaths {
+  font-size: 16px;
+  margin-top: 5px;
 }
